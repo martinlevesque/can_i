@@ -1,0 +1,40 @@
+{
+  "subsystems": {
+    "build": {
+      "promotion": {
+        "level_three": {
+          
+        }
+      }
+    },
+    
+    "components": {
+      "level_two": {
+        
+      }
+    },
+    
+    "level_one": {
+      
+    }
+  },
+  
+  "permissions": ["read", "change", "create", "delete"],
+  
+  "roles": {
+    "admin": {
+      "super": {
+        
+      }
+    }
+  },
+  
+  "abilities": {
+    "admin.super": [
+      {
+        "subsystem": "build.promotion",
+        "permissions": ["read", "create"]
+      }
+    ]
+  }
+}
