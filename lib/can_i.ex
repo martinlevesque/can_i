@@ -6,12 +6,11 @@ defmodule CanI do
   end
   
   defp dotify(object, prefix, results) do
-    final_res = for k <- Map.keys(object) do
+    for k <- Map.keys(object) do
       new_one = if prefix == "", do: k, else: "#{prefix}.#{k}"
       [new_one] ++ dotify(object[k], new_one, results)
     end
-    
-    List.flatten final_res
+    |> List.flatten
   end
   
   defp is_role?(configs, role) do
